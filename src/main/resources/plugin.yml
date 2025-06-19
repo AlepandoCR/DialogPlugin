@@ -1,0 +1,4 @@
+name: DialogPlugin
+version: '1.0.0-SNAPSHOT'
+main: alepando.dev.dialogPlugin.DialogPlugin
+api-version: '1.21'
