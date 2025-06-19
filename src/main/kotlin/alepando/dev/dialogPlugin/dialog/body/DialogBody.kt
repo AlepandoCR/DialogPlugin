@@ -1,5 +1,5 @@
-package dialog.body
+package alepando.dev.dialogPlugin.dialog.body
 
-import dialog.factory.Wrapper
+import alepando.dev.dialogPlugin.dialog.factory.Wrapper
 
 abstract class DialogBody<T>(val width: Int): Wrapper<T>

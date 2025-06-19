@@ -1,12 +1,10 @@
-package dialog.types.builders
+package alepando.dev.dialogPlugin.dialog.types.builders
 
-import dialog.factory.button.Button
-import dialog.factory.data.DialogData
-import dialog.factory.button.data.ButtonData
-import dialog.types.ConfirmationDialog
-import dialog.util.DynamicListener
+import alepando.dev.dialogPlugin.dialog.factory.button.Button
+import alepando.dev.dialogPlugin.dialog.factory.data.DialogData
+import alepando.dev.dialogPlugin.dialog.types.ConfirmationDialog
+import alepando.dev.dialogPlugin.dialog.util.DynamicListener
 import net.minecraft.server.dialog.ActionButton
-import net.minecraft.server.dialog.action.Action
 import java.util.*
 
 class ConfirmationDialogBuilder {

@@ -1,6 +1,6 @@
-package dialog.factory.input.options.builders
+package alepando.dev.dialogPlugin.dialog.factory.input.options.builders
 
-import dialog.factory.input.options.Entry
+import alepando.dev.dialogPlugin.dialog.factory.input.options.Entry
 import net.minecraft.network.chat.Component
 import java.util.*
 

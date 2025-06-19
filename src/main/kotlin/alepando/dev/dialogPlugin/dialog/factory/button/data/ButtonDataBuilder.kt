@@ -1,4 +1,4 @@
-package dialog.factory.button.data
+package alepando.dev.dialogPlugin.dialog.factory.button.data
 
 import net.minecraft.network.chat.Component
 import java.util.*

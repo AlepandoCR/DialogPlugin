@@ -1,7 +1,7 @@
-package dialog.factory.button
+package alepando.dev.dialogPlugin.dialog.factory.button
 
-import dialog.factory.Wrapper
-import dialog.factory.button.data.ButtonData
+import alepando.dev.dialogPlugin.dialog.factory.Wrapper
+import alepando.dev.dialogPlugin.dialog.factory.button.data.ButtonData
 import net.minecraft.server.dialog.ActionButton
 import net.minecraft.server.dialog.action.Action
 import java.util.*
@@ -9,7 +9,7 @@ import java.util.*
 class Button(
     private val data: ButtonData,
     private val action: Optional<Action> = Optional.empty() // Se puede poner un StaticAction con un ClickEvent parece
-):Wrapper<ActionButton> {
+): Wrapper<ActionButton> {
     override fun toNMS(): ActionButton{
         return ActionButton(data.toNMS(),action)
     }

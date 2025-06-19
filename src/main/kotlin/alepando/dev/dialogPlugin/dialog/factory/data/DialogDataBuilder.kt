@@ -1,7 +1,7 @@
-package dialog.factory.data
+package alepando.dev.dialogPlugin.dialog.factory.data
 
-import dialog.body.DialogBody
-import dialog.factory.input.Input
+import alepando.dev.dialogPlugin.dialog.body.DialogBody
+import alepando.dev.dialogPlugin.dialog.factory.input.Input
 import net.minecraft.network.chat.Component
 import net.minecraft.server.dialog.DialogAction
 import java.util.*

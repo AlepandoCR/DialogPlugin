@@ -1,6 +1,6 @@
-package dialog.factory.input.options.builders
+package alepando.dev.dialogPlugin.dialog.factory.input.options.builders
 
-import dialog.factory.input.options.RangeInfo
+import alepando.dev.dialogPlugin.dialog.factory.input.options.RangeInfo
 import java.util.*
 
 class RangeInfoBuilder {

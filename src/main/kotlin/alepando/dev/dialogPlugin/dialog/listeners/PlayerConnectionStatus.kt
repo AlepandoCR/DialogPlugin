@@ -1,13 +1,13 @@
-package dialog.listeners
+package alepando.dev.dialogPlugin.dialog.listeners
 
-import dialog.packets.PacketSniffer
+import alepando.dev.dialogPlugin.DialogPlugin
+import alepando.dev.dialogPlugin.dialog.packets.PacketSniffer
 import org.bukkit.event.EventHandler
 import org.bukkit.event.Listener
 import org.bukkit.event.player.PlayerJoinEvent
 import org.bukkit.event.player.PlayerQuitEvent
-import org.fuchiBol.FuchiBol
 
-class PlayerConnectionStatus(private val plugin: FuchiBol): Listener {
+class PlayerConnectionStatus(private val plugin: DialogPlugin): Listener {
 
     @EventHandler
     fun onJoin(event: PlayerJoinEvent){

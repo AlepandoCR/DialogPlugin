@@ -1,9 +1,9 @@
-package dialog.factory.input
+package alepando.dev.dialogPlugin.dialog.factory.input
 
-import dialog.factory.Wrapper
+import alepando.dev.dialogPlugin.dialog.factory.Wrapper
 import net.minecraft.network.chat.Component
 
 abstract class Input<T>(
     val label: Component
-) : Wrapper<T>{
+) : Wrapper<T> {
 }

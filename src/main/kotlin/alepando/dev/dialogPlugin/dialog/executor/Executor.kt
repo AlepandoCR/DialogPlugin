@@ -1,9 +1,9 @@
-package dialog.executor
+package alepando.dev.dialogPlugin.dialog.executor
 
-import dialog.factory.actions.CustomAction
-import dialog.factory.actions.KillPlayerAction
-import dialog.packets.reader.InputReader
-import dialog.packets.reader.types.PlayerReturnValueReader
+import alepando.dev.dialogPlugin.dialog.factory.actions.CustomAction
+import alepando.dev.dialogPlugin.dialog.factory.actions.KillPlayerAction
+import alepando.dev.dialogPlugin.dialog.packets.reader.InputReader
+import alepando.dev.dialogPlugin.dialog.packets.reader.types.PlayerReturnValueReader
 import net.minecraft.resources.ResourceLocation
 
 const val namespace = "fuchibol"

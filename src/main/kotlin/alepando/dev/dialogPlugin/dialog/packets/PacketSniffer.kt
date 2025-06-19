@@ -1,6 +1,7 @@
-package dialog.packets
+package alepando.dev.dialogPlugin.dialog.packets
 
-import dialog.packets.reader.ReaderManager
+import alepando.dev.dialogPlugin.DialogPlugin
+import alepando.dev.dialogPlugin.dialog.packets.reader.ReaderManager
 import io.netty.channel.ChannelDuplexHandler
 import io.netty.channel.ChannelHandlerContext
 import net.minecraft.network.Connection
@@ -8,14 +9,13 @@ import net.minecraft.network.protocol.common.ServerboundCustomClickActionPacket
 import org.bukkit.Bukkit
 import org.bukkit.craftbukkit.entity.CraftPlayer
 import org.bukkit.entity.Player
-import org.fuchiBol.FuchiBol
 import java.util.*
 
 object PacketSniffer {
 
     private val injectedPlayers = mutableSetOf<UUID>()
 
-    fun inject(player: Player, plugin: FuchiBol) {
+    fun inject(player: Player, plugin: DialogPlugin) {
         val nmsPlayer = (player as CraftPlayer).handle
         val connection: Connection = nmsPlayer.connection.connection
         val channel = connection.channel

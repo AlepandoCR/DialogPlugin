@@ -1,6 +1,6 @@
-package dialog.factory.input.options
+package alepando.dev.dialogPlugin.dialog.factory.input.options
 
-import dialog.factory.Wrapper
+import alepando.dev.dialogPlugin.dialog.factory.Wrapper
 import net.minecraft.server.dialog.input.NumberRangeInput
 import java.util.*
 
@@ -11,7 +11,7 @@ class RangeInfo(
     private val end: Float,
     private val initial: Optional<Float> = Optional.empty(),
     private val step: Optional<Float> = Optional.empty()
-) : Wrapper<NMSRangeInfo>{
+) : Wrapper<NMSRangeInfo> {
     override fun toNMS(): NMSRangeInfo {
         return NMSRangeInfo(start, end,initial,step)
     }

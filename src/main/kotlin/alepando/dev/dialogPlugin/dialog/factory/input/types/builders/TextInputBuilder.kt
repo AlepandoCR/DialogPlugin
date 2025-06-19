@@ -1,6 +1,6 @@
 package dialog.factory.input.types.builders
 
-import dialog.factory.input.options.MultilineOptions
+import alepando.dev.dialogPlugin.dialog.factory.input.options.MultilineOptions
 import dialog.factory.input.types.TextInput
 import net.minecraft.network.chat.Component
 

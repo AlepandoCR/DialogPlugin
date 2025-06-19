@@ -1,8 +1,8 @@
-package dialog.types.builders
+package alepando.dev.dialogPlugin.dialog.types.builders
 
-import dialog.factory.button.Button
-import dialog.factory.data.DialogData
-import dialog.types.LinksDialog
+import alepando.dev.dialogPlugin.dialog.factory.button.Button
+import alepando.dev.dialogPlugin.dialog.factory.data.DialogData
+import alepando.dev.dialogPlugin.dialog.types.LinksDialog
 import java.util.*
 
 class LinksDialogBuilder {

@@ -1,11 +1,11 @@
-package dialog.util
+package alepando.dev.dialogPlugin.dialog.util
 
+import alepando.dev.dialogPlugin.DialogPlugin
 import org.bukkit.event.HandlerList
 import org.bukkit.event.Listener
-import org.fuchiBol.FuchiBol
 
 class DynamicListener(
-    val plugin: FuchiBol
+    private val plugin: DialogPlugin
 ) {
     private var activeListener = false
     private var listener: Listener? = null

@@ -1,4 +1,4 @@
-package dialog.factory.input
+package alepando.dev.dialogPlugin.dialog.factory.input
 
 import net.minecraft.network.chat.Component
 

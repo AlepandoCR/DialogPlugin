@@ -1,7 +1,7 @@
 package dialog.factory.input.types
 
-import dialog.factory.Wrapper
-import dialog.factory.input.Input
+import alepando.dev.dialogPlugin.dialog.factory.Wrapper
+import alepando.dev.dialogPlugin.dialog.factory.input.Input
 import net.minecraft.network.chat.Component
 import net.minecraft.server.dialog.input.BooleanInput
 
@@ -10,7 +10,7 @@ class BooleanInput(
     private val initial: Boolean,
     private val onTrue: String,
     private val onFalse: String
-    ) : Input<BooleanInput>(label), Wrapper<BooleanInput>{
+    ) : Input<BooleanInput>(label), Wrapper<BooleanInput> {
     override fun toNMS(): BooleanInput {
         return BooleanInput(label,initial,onTrue,onFalse)
     }

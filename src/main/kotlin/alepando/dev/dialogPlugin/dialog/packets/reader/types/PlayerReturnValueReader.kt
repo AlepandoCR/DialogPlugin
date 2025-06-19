@@ -1,6 +1,6 @@
-package dialog.packets.reader.types
+package alepando.dev.dialogPlugin.dialog.packets.reader.types
 
-import dialog.packets.reader.InputReader
+import alepando.dev.dialogPlugin.dialog.packets.reader.InputReader
 import net.minecraft.network.protocol.common.ServerboundCustomClickActionPacket
 import org.bukkit.entity.Player
 

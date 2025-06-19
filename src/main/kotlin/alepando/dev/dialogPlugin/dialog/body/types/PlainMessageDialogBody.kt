@@ -1,6 +1,6 @@
-package dialog.body.types
+package alepando.dev.dialogPlugin.dialog.body.types
 
-import dialog.body.DialogBody
+import alepando.dev.dialogPlugin.dialog.body.DialogBody
 import net.minecraft.network.chat.Component
 import net.minecraft.server.dialog.body.PlainMessage
 

@@ -1,9 +1,9 @@
-package dialog.body.types.builders
+package alepando.dev.dialogPlugin.dialog.body.types.builders
 
 import net.minecraft.server.dialog.body.PlainMessage
 import org.bukkit.inventory.ItemStack
 import java.util.*
-import dialog.body.types.ItemDialogBody
+import alepando.dev.dialogPlugin.dialog.body.types.ItemDialogBody
 
 class ItemDialogBodyBuilder {
     private var width: Int = 100

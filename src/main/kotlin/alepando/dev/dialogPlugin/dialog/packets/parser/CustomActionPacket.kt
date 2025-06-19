@@ -1,4 +1,4 @@
-package dialog.packets.parser
+package alepando.dev.dialogPlugin.dialog.packets.parser
 
 import net.minecraft.nbt.*
 import net.minecraft.network.protocol.common.ServerboundCustomClickActionPacket

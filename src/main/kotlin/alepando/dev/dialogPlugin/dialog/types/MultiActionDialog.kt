@@ -1,9 +1,9 @@
-package dialog.types
+package alepando.dev.dialogPlugin.dialog.types
 
-import dialog.factory.Dialog
-import dialog.factory.Wrapper
-import dialog.factory.button.Button
-import dialog.factory.data.DialogData
+import alepando.dev.dialogPlugin.dialog.factory.Dialog
+import alepando.dev.dialogPlugin.dialog.factory.Wrapper
+import alepando.dev.dialogPlugin.dialog.factory.button.Button
+import alepando.dev.dialogPlugin.dialog.factory.data.DialogData
 import net.minecraft.server.dialog.ActionButton
 import net.minecraft.server.dialog.MultiActionDialog
 import java.util.*
@@ -16,7 +16,7 @@ class MultiActionDialog(
     private val exitButton: Optional<Button>,
     private val columns: Int
 
-):Dialog(data), Wrapper<NMSMultiActionDialog> {
+): Dialog(data), Wrapper<NMSMultiActionDialog> {
     override fun toNMS(): NMSMultiActionDialog {
         return NMSMultiActionDialog(data.toNMS(),toNMSButtonList(),toNMSOptionalButton(),columns)
     }

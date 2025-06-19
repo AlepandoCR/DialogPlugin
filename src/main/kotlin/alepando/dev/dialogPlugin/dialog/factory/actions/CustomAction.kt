@@ -1,10 +1,10 @@
-package dialog.factory.actions
+package alepando.dev.dialogPlugin.dialog.factory.actions
 
-import dialog.util.DynamicListener
+import alepando.dev.dialogPlugin.DialogPlugin
+import alepando.dev.dialogPlugin.dialog.util.DynamicListener
 import org.bukkit.entity.Player
 import org.bukkit.event.Listener
 import org.bukkit.scheduler.BukkitRunnable
-import org.fuchiBol.FuchiBol
 
 abstract class CustomAction {
 
@@ -17,9 +17,9 @@ abstract class CustomAction {
         dynamicListener?.setListener(listener)
     }
 
-    protected abstract fun task(player: Player,plugin: FuchiBol)
+    protected abstract fun task(player: Player,plugin: DialogPlugin)
 
-    fun execute(player: Player,plugin: FuchiBol){
+    fun execute(player: Player,plugin: DialogPlugin){
         dynamicListener = DynamicListener(plugin)
         registerListener()
         object : BukkitRunnable(){

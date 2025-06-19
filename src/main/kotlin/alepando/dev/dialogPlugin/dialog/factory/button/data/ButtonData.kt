@@ -1,6 +1,6 @@
-package dialog.factory.button.data
+package alepando.dev.dialogPlugin.dialog.factory.button.data
 
-import dialog.factory.Wrapper
+import alepando.dev.dialogPlugin.dialog.factory.Wrapper
 import net.minecraft.network.chat.Component
 import net.minecraft.server.dialog.CommonButtonData
 import java.util.*

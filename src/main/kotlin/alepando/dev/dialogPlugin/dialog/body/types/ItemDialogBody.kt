@@ -1,6 +1,6 @@
-package dialog.body.types
+package alepando.dev.dialogPlugin.dialog.body.types
 
-import dialog.body.DialogBody
+import alepando.dev.dialogPlugin.dialog.body.DialogBody
 import net.minecraft.server.dialog.body.PlainMessage
 import org.bukkit.craftbukkit.inventory.CraftItemStack
 import org.bukkit.inventory.ItemStack

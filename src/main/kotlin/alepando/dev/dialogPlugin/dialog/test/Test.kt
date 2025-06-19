@@ -1,16 +1,16 @@
-package dialog.test
+package alepando.dev.dialogPlugin.dialog.test
 
-import dialog.body.types.PlainMessageDialogBody
-import dialog.body.types.builders.ItemDialogBodyBuilder
-import dialog.executor.Keys
-import dialog.factory.button.Button
-import dialog.factory.button.data.ButtonDataBuilder
-import dialog.factory.data.DialogDataBuilder
-import dialog.factory.input.options.MultilineOptions
-import dialog.factory.input.options.RangeInfo
+import alepando.dev.dialogPlugin.dialog.body.types.PlainMessageDialogBody
+import alepando.dev.dialogPlugin.dialog.body.types.builders.ItemDialogBodyBuilder
+import alepando.dev.dialogPlugin.dialog.executor.Keys
+import alepando.dev.dialogPlugin.dialog.factory.button.Button
+import alepando.dev.dialogPlugin.dialog.factory.button.data.ButtonDataBuilder
+import alepando.dev.dialogPlugin.dialog.factory.data.DialogDataBuilder
+import alepando.dev.dialogPlugin.dialog.factory.input.options.MultilineOptions
+import alepando.dev.dialogPlugin.dialog.factory.input.options.RangeInfo
 import dialog.factory.input.types.builders.NumberRangeInputBuilder
 import dialog.factory.input.types.builders.TextInputBuilder
-import dialog.types.builders.MultiActionDialogBuilder
+import alepando.dev.dialogPlugin.dialog.types.builders.MultiActionDialogBuilder
 import net.minecraft.core.Holder.Direct
 import net.minecraft.network.chat.Component
 import net.minecraft.server.dialog.Dialog
@@ -23,7 +23,7 @@ import org.bukkit.inventory.ItemStack
 import java.util.*
 
 class Test(
-    val player: Player
+    private val player: Player
 ) {
 
     fun testDialog(){

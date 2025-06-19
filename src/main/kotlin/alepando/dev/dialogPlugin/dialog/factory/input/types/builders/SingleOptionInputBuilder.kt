@@ -1,6 +1,6 @@
 package dialog.factory.input.types.builders
 
-import dialog.factory.input.options.Entry
+import alepando.dev.dialogPlugin.dialog.factory.input.options.Entry
 import dialog.factory.input.types.SingleOptionInput
 import net.minecraft.network.chat.Component
 

@@ -1,9 +1,9 @@
-package dialog.types
+package alepando.dev.dialogPlugin.dialog.types
 
-import dialog.factory.Dialog
-import dialog.factory.Wrapper
-import dialog.factory.button.Button
-import dialog.factory.data.DialogData
+import alepando.dev.dialogPlugin.dialog.factory.Dialog
+import alepando.dev.dialogPlugin.dialog.factory.Wrapper
+import alepando.dev.dialogPlugin.dialog.factory.button.Button
+import alepando.dev.dialogPlugin.dialog.factory.data.DialogData
 import net.minecraft.server.dialog.NoticeDialog
 
 typealias NMSNoticeDialog = NoticeDialog

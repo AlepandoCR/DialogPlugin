@@ -26,20 +26,7 @@ dependencies {
     compileOnly(files("nms/paper-1.21.6.jar"))
     paperweight.paperDevBundle("1.21.6-R0.1-SNAPSHOT")
     implementation(platform("com.intellectualsites.bom:bom-newest:1.52"))
-    compileOnly("io.github.toxicity188:BetterModel:1.6.0")
-    compileOnly("org.geysermc.floodgate:api:2.2.3-SNAPSHOT")
-    compileOnly("org.geysermc.geyser:api:2.4.2-SNAPSHOT")
-    compileOnly("net.citizensnpcs:citizensapi:2.0.35-SNAPSHOT")
     implementation(kotlin("stdlib"))
-}
-
-tasks {
-    runServer {
-        // Configure the Minecraft version for our task.
-        // This is the only required configuration besides applying the plugin.
-        // Your plugin's jar (or shadowJar if present) will be used automatically.
-        minecraftVersion("1.21")
-    }
 }
 
 val targetJavaVersion = 21
@@ -47,15 +34,16 @@ kotlin {
     jvmToolchain(targetJavaVersion)
 }
 
-tasks.build {
-    dependsOn("shadowJar")
-}
+tasks {
+    shadowJar {
+        archiveClassifier.set("")
+        mergeServiceFiles()
+    }
 
-tasks.processResources {
-    val props = mapOf("version" to version)
-    inputs.properties(props)
-    filteringCharset = "UTF-8"
-    filesMatching("plugin.yml") {
-        expand(props)
+    build {
+        dependsOn(shadowJar)
+    }
+    runServer {
+        minecraftVersion("1.21.6")
     }
 }

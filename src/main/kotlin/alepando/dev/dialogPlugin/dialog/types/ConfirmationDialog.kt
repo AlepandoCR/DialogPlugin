@@ -1,8 +1,8 @@
-package dialog.types
+package alepando.dev.dialogPlugin.dialog.types
 
-import dialog.factory.Dialog
-import dialog.factory.data.DialogData
-import dialog.util.DynamicListener
+import alepando.dev.dialogPlugin.dialog.factory.Dialog
+import alepando.dev.dialogPlugin.dialog.factory.data.DialogData
+import alepando.dev.dialogPlugin.dialog.util.DynamicListener
 import net.minecraft.server.dialog.ActionButton
 import java.util.*
 

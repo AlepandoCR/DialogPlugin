@@ -1,8 +1,8 @@
 package dialog.factory.input.types
 
-import dialog.factory.Wrapper
-import dialog.factory.input.LabelVisible
-import dialog.factory.input.options.Entry
+import alepando.dev.dialogPlugin.dialog.factory.Wrapper
+import alepando.dev.dialogPlugin.dialog.factory.input.LabelVisible
+import alepando.dev.dialogPlugin.dialog.factory.input.options.Entry
 import net.minecraft.network.chat.Component
 
 typealias NMSSingleOptionInput = net.minecraft.server.dialog.input.SingleOptionInput

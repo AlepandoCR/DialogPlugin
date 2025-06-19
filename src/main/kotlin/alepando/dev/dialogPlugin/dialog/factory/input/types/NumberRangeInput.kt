@@ -1,8 +1,8 @@
 package dialog.factory.input.types
 
-import dialog.factory.Wrapper
-import dialog.factory.input.SizeableInput
-import dialog.factory.input.options.RangeInfo
+import alepando.dev.dialogPlugin.dialog.factory.Wrapper
+import alepando.dev.dialogPlugin.dialog.factory.input.SizeableInput
+import alepando.dev.dialogPlugin.dialog.factory.input.options.RangeInfo
 import net.minecraft.network.chat.Component
 import net.minecraft.server.dialog.input.NumberRangeInput
 

@@ -1,6 +1,6 @@
-package dialog.factory.input.options
+package alepando.dev.dialogPlugin.dialog.factory.input.options
 
-import dialog.factory.Wrapper
+import alepando.dev.dialogPlugin.dialog.factory.Wrapper
 import net.minecraft.network.chat.Component
 import net.minecraft.server.dialog.input.SingleOptionInput
 import java.util.*

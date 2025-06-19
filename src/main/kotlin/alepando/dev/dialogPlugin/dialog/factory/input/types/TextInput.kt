@@ -1,8 +1,8 @@
 package dialog.factory.input.types
 
-import dialog.factory.Wrapper
-import dialog.factory.input.LabelVisible
-import dialog.factory.input.options.MultilineOptions
+import alepando.dev.dialogPlugin.dialog.factory.Wrapper
+import alepando.dev.dialogPlugin.dialog.factory.input.LabelVisible
+import alepando.dev.dialogPlugin.dialog.factory.input.options.MultilineOptions
 import net.minecraft.network.chat.Component
 import net.minecraft.server.dialog.input.TextInput
 import java.util.*

@@ -1,7 +1,7 @@
-package dialog.factory
+package alepando.dev.dialogPlugin.dialog.factory
 
-import dialog.factory.data.DialogData
-import dialog.util.DynamicListener
+import alepando.dev.dialogPlugin.dialog.factory.data.DialogData
+import alepando.dev.dialogPlugin.dialog.util.DynamicListener
 import org.bukkit.event.Listener
 import java.util.*
 

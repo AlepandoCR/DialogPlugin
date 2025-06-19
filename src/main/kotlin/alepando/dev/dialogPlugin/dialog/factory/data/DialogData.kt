@@ -1,8 +1,8 @@
-package dialog.factory.data
+package alepando.dev.dialogPlugin.dialog.factory.data
 
-import dialog.body.DialogBody
-import dialog.factory.Wrapper
-import dialog.factory.input.Input
+import alepando.dev.dialogPlugin.dialog.body.DialogBody
+import alepando.dev.dialogPlugin.dialog.factory.Wrapper
+import alepando.dev.dialogPlugin.dialog.factory.input.Input
 import net.minecraft.network.chat.Component
 import net.minecraft.server.dialog.CommonDialogData
 import net.minecraft.server.dialog.DialogAction
@@ -22,7 +22,7 @@ class DialogData(
     private val afterAction: DialogAction,
     private val dialogBody: List<DialogBody<*>>,
     private val inputs: List<Input<*>>
-):Wrapper<CommonDialogData> {
+): Wrapper<CommonDialogData> {
     override fun toNMS(): CommonDialogData{
         return CommonDialogData(title,externalTitle,canCloseWithEscape,pause,afterAction,nmsBodyList(),nmsInputList())
     }

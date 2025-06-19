@@ -1,6 +1,6 @@
 package dialog.factory.input.types.builders
 
-import dialog.factory.input.options.RangeInfo
+import alepando.dev.dialogPlugin.dialog.factory.input.options.RangeInfo
 import dialog.factory.input.types.NumberRangeInput
 import net.minecraft.network.chat.Component
 

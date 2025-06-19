@@ -1,14 +1,14 @@
-package dialog.factory.actions
+package alepando.dev.dialogPlugin.dialog.factory.actions
 
+import alepando.dev.dialogPlugin.DialogPlugin
 import org.bukkit.entity.Player
 import org.bukkit.event.EventHandler
 import org.bukkit.event.Listener
 import org.bukkit.event.entity.PlayerDeathEvent
 import org.bukkit.scheduler.BukkitRunnable
-import org.fuchiBol.FuchiBol
 
 object KillPlayerAction: CustomAction() {
-    override fun task(player: Player,plugin: FuchiBol) {
+    override fun task(player: Player,plugin: DialogPlugin) {
         dynamicListener?.start()
         player.damage(5.0)
 
