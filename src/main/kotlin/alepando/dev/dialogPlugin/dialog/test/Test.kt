@@ -1,16 +1,16 @@
 package alepando.dev.dialogPlugin.dialog.test
 
-import alepando.dev.dialogPlugin.dialog.body.types.PlainMessageDialogBody
-import alepando.dev.dialogPlugin.dialog.body.types.builders.ItemDialogBodyBuilder
-import alepando.dev.dialogPlugin.dialog.executor.Keys
-import alepando.dev.dialogPlugin.dialog.factory.button.Button
-import alepando.dev.dialogPlugin.dialog.factory.button.data.ButtonDataBuilder
-import alepando.dev.dialogPlugin.dialog.factory.data.DialogDataBuilder
-import alepando.dev.dialogPlugin.dialog.factory.input.options.MultilineOptions
-import alepando.dev.dialogPlugin.dialog.factory.input.options.RangeInfo
-import dialog.factory.input.types.builders.NumberRangeInputBuilder
-import dialog.factory.input.types.builders.TextInputBuilder
-import alepando.dev.dialogPlugin.dialog.types.builders.MultiActionDialogBuilder
+import alepando.dev.dialogapi.body.types.PlainMessageDialogBody
+import alepando.dev.dialogapi.body.types.builders.ItemDialogBodyBuilder
+import alepando.dev.dialogapi.executor.Keys
+import alepando.dev.dialogapi.factory.button.Button
+import alepando.dev.dialogapi.factory.button.data.ButtonDataBuilder
+import alepando.dev.dialogapi.factory.data.DialogDataBuilder
+import alepando.dev.dialogapi.factory.input.options.MultilineOptions
+import alepando.dev.dialogapi.factory.input.options.RangeInfo
+import alepando.dev.dialogapi.factory.input.types.builders.NumberRangeInputBuilder
+import alepando.dev.dialogapi.factory.input.types.builders.TextInputBuilder
+import alepando.dev.dialogapi.types.builders.MultiActionDialogBuilder
 import net.minecraft.core.Holder.Direct
 import net.minecraft.network.chat.Component
 import net.minecraft.server.dialog.Dialog

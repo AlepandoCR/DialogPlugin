@@ -1,6 +1,6 @@
 package alepando.dev.dialogPlugin
 
-import alepando.dev.dialogPlugin.dialog.listeners.PlayerConnectionStatus
+import alepando.dev.dialogapi.listeners.PlayerConnectionStatus
 import alepando.dev.dialogPlugin.dialog.test.command.TestCommand
 import org.bukkit.plugin.java.JavaPlugin
 
