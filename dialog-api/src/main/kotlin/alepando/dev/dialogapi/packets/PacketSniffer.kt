@@ -1,6 +1,5 @@
 package alepando.dev.dialogapi.packets
 
-import alepando.dev.dialogPlugin.DialogPlugin
 import alepando.dev.dialogapi.packets.reader.ReaderManager
 import io.netty.channel.ChannelDuplexHandler
 import io.netty.channel.ChannelHandlerContext
@@ -9,13 +8,14 @@ import net.minecraft.network.protocol.common.ServerboundCustomClickActionPacket
 import org.bukkit.Bukkit
 import org.bukkit.craftbukkit.entity.CraftPlayer
 import org.bukkit.entity.Player
+import org.bukkit.plugin.Plugin
 import java.util.*
 
-object PacketSniffer {
+internal object PacketSniffer {
 
     private val injectedPlayers = mutableSetOf<UUID>()
 
-    fun inject(player: Player, plugin: DialogPlugin) {
+    fun inject(player: Player, plugin: Plugin) {
         val nmsPlayer = (player as CraftPlayer).handle
         val connection: Connection = nmsPlayer.connection.connection
         val channel = connection.channel

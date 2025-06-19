@@ -1,13 +1,13 @@
 package alepando.dev.dialogapi.listeners
 
-import alepando.dev.dialogPlugin.DialogPlugin
 import alepando.dev.dialogapi.packets.PacketSniffer
 import org.bukkit.event.EventHandler
 import org.bukkit.event.Listener
 import org.bukkit.event.player.PlayerJoinEvent
 import org.bukkit.event.player.PlayerQuitEvent
+import org.bukkit.plugin.Plugin
 
-class PlayerConnectionStatus(private val plugin: DialogPlugin): Listener {
+class PlayerConnectionStatus(private val plugin: Plugin): Listener {
 
     @EventHandler
     fun onJoin(event: PlayerJoinEvent){

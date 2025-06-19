@@ -8,7 +8,7 @@ import net.minecraft.resources.ResourceLocation
 
 const val namespace = "dialog_plugin"
 
-enum class Keys(val key: ResourceLocation, val action: CustomAction, val reader: InputReader) {
+internal enum class Keys(val key: ResourceLocation, val action: CustomAction, val reader: InputReader) {
 
     KILL_PLAYER(ResourceLocation.fromNamespaceAndPath(namespace, "kill_player"), KillPlayerAction, PlayerReturnValueReader);
 

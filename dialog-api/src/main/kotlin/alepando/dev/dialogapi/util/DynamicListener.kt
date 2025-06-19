@@ -1,11 +1,11 @@
 package alepando.dev.dialogapi.util
 
-import alepando.dev.dialogPlugin.DialogPlugin
 import org.bukkit.event.HandlerList
 import org.bukkit.event.Listener
+import org.bukkit.plugin.Plugin
 
 class DynamicListener(
-    private val plugin: DialogPlugin
+    private val plugin: Plugin
 ) {
     private var activeListener = false
     private var listener: Listener? = null

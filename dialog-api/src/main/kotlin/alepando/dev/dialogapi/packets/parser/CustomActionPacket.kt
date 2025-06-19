@@ -5,7 +5,7 @@ import net.minecraft.network.protocol.common.ServerboundCustomClickActionPacket
 import org.bukkit.Bukkit
 import java.util.Optional
 
-object CustomActionPacket {
+internal object CustomActionPacket {
     fun getValue(packet: ServerboundCustomClickActionPacket): Any? {
         val payloadHolder = packet.payload
         if (payloadHolder.isEmpty) return null
