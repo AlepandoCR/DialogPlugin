@@ -1,4 +1,4 @@
-# 📜 DialogPlugin – Custom Dialog Wrapper (Minecraft 1.21+)
+#  DialogPlugin – Custom Dialog Wrapper (Minecraft 1.21+)
 
 **DialogPlugin** is a developer-focused plugin for easily testing and extending Minecraft's new native dialogs via the `ServerboundCustomClickActionPacket`.  
 It offers a full Kotlin-based wrapper for creating rich, interactive dialogs with buttons, inputs, and custom actions.
@@ -8,20 +8,20 @@ It offers a full Kotlin-based wrapper for creating rich, interactive dialogs wit
 
 ---
 
-## 🚀 Features
+## Features
 
-- ✅ Kotlin-first builder pattern
-- ✅ Support for all Vanilla dialog types (MultiAction, List, Links, Notice)
-- ✅ Custom actions via Mojang’s native packet system
-- ✅ Input reading (text, number, multiline)
-- ✅ Item & message-based dialog bodies
-- ✅ Easy integration with Bukkit events
+-  Kotlin-first builder pattern
+-  Support for all Vanilla dialog types (MultiAction, List, Links, Notice)
+-  Custom actions via Mojang’s native packet system
+-  Input reading (text, number, multiline)
+-  Item & message-based dialog bodies
+-  Easy integration with Bukkit events
 
 ---
 
-## 📘 How to Use
+## How to Use
 
-### 🧱 Building a Simple Dialog
+### Building a Simple Dialog
 
 ```kotlin
 val dialogData = DialogDataBuilder()
@@ -32,7 +32,7 @@ val dialogData = DialogDataBuilder()
     .build() 
    ```
    
-### 🎯 Adding Buttons with Actions
+### Adding Buttons with Actions
 
  ```kotlin
  val testButton = Button(
@@ -43,7 +43,7 @@ val dialogData = DialogDataBuilder()
     Optional.of(CustomAll(Keys.KILL_PLAYER.key, Optional.empty()))
 ) 
 ```
-### 🔀 MultiAction Dialog
+### MultiAction Dialog
  ```koltlin
 val dialog = MultiActionDialogBuilder()
     .data(dialogData)
@@ -52,14 +52,14 @@ val dialog = MultiActionDialogBuilder()
     .addButton(testButton)
     .build() 
    ```
-### 🧪 Opening the Dialog
+### Opening the Dialog
  ```kotlin
 val holder = Holder.Direct(dialog.toNMS())
 (craftPlayer.handle as ServerPlayer).openDialog(holder) 
 ```
 
-### ⚙️ Creating Custom Actions
-#### 🧨 Registering an Action
+### Creating Custom Actions
+#### Registering an Action
  ```kotlin
 enum class Keys(val key: ResourceLocation, val action: CustomAction, val reader: InputReader) {
     KILL_PLAYER(
@@ -69,7 +69,7 @@ enum class Keys(val key: ResourceLocation, val action: CustomAction, val reader:
     );
 } 
 ```
-#### 🔥 Action Implementation
+####  Action Implementation
  ```kotlin
 object KillPlayerAction: CustomAction() {
     override fun task(player: Player, plugin: DialogPlugin) {
@@ -93,7 +93,7 @@ object KillPlayerAction: CustomAction() {
     }
 } 
 ```
-#### 🔍 Input Readers
+####  Input Readers
 
 ```kotlin
 object PlayerReturnValueReader : InputReader {
@@ -102,7 +102,7 @@ object PlayerReturnValueReader : InputReader {
     }
 }
 ```
-#### ⌨️ Creating Input Fields (_There are more than shown_)
+####  Creating Input Fields (_There are more than shown_)
 ```kotlin
 val stringInput = TextInputBuilder()
     .label(Component.literal("Your name"))
@@ -119,12 +119,9 @@ val numberInput = NumberRangeInputBuilder()
 ```
 
 
-🧠 Extending the Plugin
-You can add more actions, readers, and even UI components by following the builder and registry patterns shown above.
+* Extending the Plugin
+  * You can add more actions, readers, and even UI components by following the builder and registry patterns shown above.
 
-🤝 Contributions
-Pull requests are welcome.
-Feel free to adapt the system or use it as the base for your own dialog-based plugin!
-
-📝 License
-This plugin is open and unlicensed. You are free to do anything with it.
+- Contributions
+  * Pull requests are welcome. 
+  * Feel free to adapt the system or use it as the base for your own dialog-based plugin!
