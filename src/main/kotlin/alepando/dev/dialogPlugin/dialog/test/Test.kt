@@ -43,6 +43,7 @@ class Test(
 
         val testButton = Button(buttonData, Optional.of(CustomAll(Keys.KILL_PLAYER.key, Optional.empty())))
 
+
         val exitButton = Button(exitButtonData)
 
         val booleanInput = NumberRangeInputBuilder()

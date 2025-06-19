@@ -6,7 +6,7 @@ import alepando.dev.dialogPlugin.dialog.packets.reader.InputReader
 import alepando.dev.dialogPlugin.dialog.packets.reader.types.PlayerReturnValueReader
 import net.minecraft.resources.ResourceLocation
 
-const val namespace = "fuchibol"
+const val namespace = "dialog_plugin"
 
 enum class Keys(val key: ResourceLocation, val action: CustomAction, val reader: InputReader) {
 

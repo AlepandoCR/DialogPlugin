@@ -63,7 +63,7 @@ val holder = Holder.Direct(dialog.toNMS())
  ```kotlin
 enum class Keys(val key: ResourceLocation, val action: CustomAction, val reader: InputReader) {
     KILL_PLAYER(
-        ResourceLocation.fromNamespaceAndPath("fuchibol", "kill_player"),
+        ResourceLocation.fromNamespaceAndPath(namespace, "kill_player"),
         KillPlayerAction,
         PlayerReturnValueReader
     );
@@ -83,6 +83,7 @@ object KillPlayerAction: CustomAction() {
         }.runTaskLater(plugin, 20L)
     }
 
+  // Custom listeners are not required for CustomActions, but its an option 
     override fun listener(): Listener {
         return object : Listener {
             @EventHandler
