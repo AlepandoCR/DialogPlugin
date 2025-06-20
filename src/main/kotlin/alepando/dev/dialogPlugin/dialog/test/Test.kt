@@ -1,61 +1,75 @@
 package alepando.dev.dialogPlugin.dialog.test
 
-import alepando.dev.dialogPlugin.dialog.body.types.PlainMessageDialogBody
-import alepando.dev.dialogPlugin.dialog.body.types.builders.ItemDialogBodyBuilder
-import alepando.dev.dialogPlugin.dialog.executor.Keys
-import alepando.dev.dialogPlugin.dialog.factory.button.Button
-import alepando.dev.dialogPlugin.dialog.factory.button.data.ButtonDataBuilder
-import alepando.dev.dialogPlugin.dialog.factory.data.DialogDataBuilder
-import alepando.dev.dialogPlugin.dialog.factory.input.options.MultilineOptions
-import alepando.dev.dialogPlugin.dialog.factory.input.options.RangeInfo
-import dialog.factory.input.types.builders.NumberRangeInputBuilder
-import dialog.factory.input.types.builders.TextInputBuilder
-import alepando.dev.dialogPlugin.dialog.types.builders.MultiActionDialogBuilder
-import net.minecraft.core.Holder.Direct
-import net.minecraft.network.chat.Component
-import net.minecraft.server.dialog.Dialog
-import net.minecraft.server.dialog.action.CustomAll
-import net.minecraft.server.dialog.body.PlainMessage
+import alepando.dev.dialogPlugin.DialogPlugin
+import alepando.dev.dialogapi.body.types.PlainMessageDialogBody
+import alepando.dev.dialogapi.body.types.builders.ItemDialogBodyBuilder
+import alepando.dev.dialogapi.executor.CustomKeyRegistry
+import alepando.dev.dialogapi.executor.PlayerOpener.openDialog
+import alepando.dev.dialogapi.factory.actions.KillPlayerAction
+import alepando.dev.dialogapi.factory.button.Button
+import alepando.dev.dialogapi.factory.button.data.Action
+import alepando.dev.dialogapi.factory.button.data.ButtonDataBuilder
+import alepando.dev.dialogapi.factory.data.DialogDataBuilder
+import alepando.dev.dialogapi.factory.data.ResourceLocation
+import alepando.dev.dialogapi.factory.input.options.MultilineOptions
+import alepando.dev.dialogapi.factory.input.options.RangeInfo
+import alepando.dev.dialogapi.factory.input.types.builders.NumberRangeInputBuilder
+import alepando.dev.dialogapi.factory.input.types.builders.TextInputBuilder
+import alepando.dev.dialogapi.packets.reader.types.PlayerReturnValueReader
+import alepando.dev.dialogapi.types.builders.MultiActionDialogBuilder
+import net.kyori.adventure.text.Component
 import org.bukkit.Material
-import org.bukkit.craftbukkit.entity.CraftPlayer
 import org.bukkit.entity.Player
 import org.bukkit.inventory.ItemStack
 import java.util.*
 
 class Test(
-    private val player: Player
+    private val player: Player,
+    private val plugin: DialogPlugin
 ) {
 
     fun testDialog(){
-        val craftPlayer = player as CraftPlayer
-        val nmsPlayer = craftPlayer.handle
+
+        val killPlayerNamespace = "dialog_plugin_test"
+        val killPlayerPath = "kill_player_test"
+        val killPlayerKey = ResourceLocation(killPlayerNamespace, killPlayerPath)
+
+        // Register the api's test KillPlayerAction
+        try {
+            CustomKeyRegistry.register(
+                killPlayerKey,
+                KillPlayerAction,
+                PlayerReturnValueReader
+            )
+        } catch (e: IllegalStateException) {
+            player.sendMessage("Note: Kill player key was already registered: ${e.message}")
+        }
 
 
         val buttonData = ButtonDataBuilder()
-            .label(Component.literal("test"))
+            .label(Component.text("test"))
             .width(100)
             .build()
 
         val exitButtonData = ButtonDataBuilder()
-            .label(Component.literal("exit"))
+            .label(Component.text("exit"))
             .width(80)
             .build()
 
-        val testButton = Button(buttonData, Optional.of(CustomAll(Keys.KILL_PLAYER.key, Optional.empty())))
-
+        val testButton = Button(buttonData, Optional.of(Action(killPlayerKey)))
 
         val exitButton = Button(exitButtonData)
 
         val booleanInput = NumberRangeInputBuilder()
-            .label(Component.literal("Input"))
-            .with(150)
+            .label(Component.text("Input"))
+            .width(150)
             .rangeInfo(RangeInfo(1.0f,10.0f))
             .labelFormat("")
             .build()
 
         val stringInput = TextInputBuilder()
-            .label(Component.literal("Text input"))
-            .with(256)
+            .label(Component.text("Input"))
+            .width(256)
             .initial("")
             .labelVisible(true)
             .maxLength(300)
@@ -66,16 +80,16 @@ class Test(
             .item(ItemStack(Material.LAPIS_LAZULI))
             .height(20)
             .width(20)
-            .description(PlainMessage(Component.literal("Item test"),100))
+            .description("item_test",100)
             .showDecorations(true)
             .showTooltip(false)
             .build()
 
-        val dialogBody = PlainMessageDialogBody(100, Component.literal("A").append(Component.literal(" message")))
+        val dialogBody = PlainMessageDialogBody(100, Component.text("body"))
 
         val dialogData = DialogDataBuilder()
-            .title(Component.literal("Test Menu"))
-            .externalTitle(Component.literal("Menu Test"))
+            .title(Component.text("Test Menu"))
+            .externalTitle(Component.text("Menu Test"))
             .canCloseWithEscape(true)
             .addBody(dialogBody)
             .addBody(itemBody)
@@ -92,10 +106,6 @@ class Test(
             .addButton(testButton)
             .build()
 
-
-
-        val holder = Direct<Dialog>(confirmationDialog.toNMS())
-
-        nmsPlayer.openDialog(holder)
+        player.openDialog(confirmationDialog)
     }
 }
