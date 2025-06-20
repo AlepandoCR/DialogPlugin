@@ -48,14 +48,14 @@ class Test(
 
         val booleanInput = NumberRangeInputBuilder()
             .label(Component.literal("Input"))
-            .with(150)
+            .width(150)
             .rangeInfo(RangeInfo(1.0f,10.0f))
             .labelFormat("")
             .build()
 
         val stringInput = TextInputBuilder()
             .label(Component.literal("Text input"))
-            .with(256)
+            .width(256)
             .initial("")
             .labelVisible(true)
             .maxLength(300)
