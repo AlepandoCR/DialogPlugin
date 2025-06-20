@@ -11,7 +11,7 @@ class SingleOptionInputBuilder {
     private var labelVisible: Boolean = true
 
     fun label(label: Component) = apply { this.label = label }
-    fun with(width: Int) = apply { this.with = width }
+    fun width(width: Int) = apply { this.with = width }
     fun addEntry(entry: Entry) = apply { this.entries.add(entry) }
     fun entries(entries: List<Entry>) = apply { this.entries = entries.toMutableList() }
     fun labelVisible(visible: Boolean) = apply { this.labelVisible = visible }

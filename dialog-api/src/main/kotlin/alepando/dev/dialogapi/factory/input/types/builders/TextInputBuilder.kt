@@ -13,14 +13,14 @@ class TextInputBuilder {
     private var multiline: MultilineOptions? = null
 
     fun label(label: Component) = apply { this.label = label }
-    fun with(width: Int) = apply { this.with = width }
+    fun width(width: Int) = apply { this.with = width }
     fun labelVisible(visible: Boolean) = apply { this.labelVisible = visible }
     fun initial(text: String) = apply { this.initial = text }
     fun maxLength(length: Int) = apply { this.maxLength = length }
     fun multiline(multiline: MultilineOptions) = apply { this.multiline = multiline }
 
     fun build(): TextInput {
-        multiline ?: throw IllegalStateException("multiline debe estar definido")
+        multiline ?: throw IllegalStateException("Multiline options must be defined for TextInput.")
         return TextInput(label, with, labelVisible, initial, maxLength, multiline!!)
     }
 }

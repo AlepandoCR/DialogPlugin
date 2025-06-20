@@ -11,13 +11,13 @@ class NumberRangeInputBuilder {
     private var rangeInfo: RangeInfo? = null
 
     fun label(label: Component) = apply { this.label = label }
-    fun with(width: Int) = apply { this.with = width }
+    fun width(width: Int) = apply { this.with = width }
     fun labelFormat(format: String) = apply { this.labelFormat = format }
     fun rangeInfo(rangeInfo: RangeInfo) = apply { this.rangeInfo = rangeInfo }
 
     fun build(): NumberRangeInput {
 
-        rangeInfo ?: throw IllegalStateException("rangeInfo must be set")
+        rangeInfo ?: throw IllegalStateException("RangeInfo must be set for NumberRangeInput.")
 
         return NumberRangeInput(label, with, labelFormat, rangeInfo!!)
     }
