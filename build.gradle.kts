@@ -14,9 +14,6 @@ repositories {
     mavenCentral()
     maven("https://maven.enginehub.org/repo/")
     maven("https://repo.papermc.io/repository/maven-public/")
-    maven("https://maven.citizensnpcs.co/repo") {
-        name = "citizens-repo"
-    }
     maven("https://repo.opencollab.dev/main/") {
         name = "opencollab-snapshot"
     }
