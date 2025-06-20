@@ -2,7 +2,6 @@ package alepando.dev.dialogPlugin.dialog.test
 
 import alepando.dev.dialogapi.body.types.PlainMessageDialogBody
 import alepando.dev.dialogapi.body.types.builders.ItemDialogBodyBuilder
-import alepando.dev.dialogapi.executor.Executor
 import alepando.dev.dialogapi.factory.button.Button
 import alepando.dev.dialogapi.factory.button.data.ButtonDataBuilder
 import alepando.dev.dialogapi.factory.data.DialogDataBuilder
@@ -22,13 +21,38 @@ import org.bukkit.entity.Player
 import org.bukkit.inventory.ItemStack
 import java.util.*
 
+// New imports
+import alepando.dev.dialogapi.executor.CustomKeyRegistry
+import alepando.dev.dialogapi.factory.actions.KillPlayerAction
+import alepando.dev.dialogapi.packets.reader.types.PlayerReturnValueReader
+import net.minecraft.resources.ResourceLocation
+import alepando.dev.dialogPlugin.DialogPlugin // To accept plugin instance
+
 class Test(
-    private val player: Player
+    private val player: Player,
+    private val plugin: DialogPlugin // Added plugin instance
 ) {
 
     fun testDialog(){
         val craftPlayer = player as CraftPlayer
         val nmsPlayer = craftPlayer.handle
+
+        // Define the key for the kill player action
+        val killPlayerNamespace = "dialog_plugin_test" // Or use alepando.dev.dialogapi.executor.namespace
+        val killPlayerPath = "kill_player_test"
+        val killPlayerKey = ResourceLocation.fromNamespaceAndPath(killPlayerNamespace, killPlayerPath)
+
+        // Register the KillPlayerAction
+        try {
+            CustomKeyRegistry.register(
+                killPlayerNamespace,
+                killPlayerPath,
+                KillPlayerAction,
+                PlayerReturnValueReader
+            )
+        } catch (e: IllegalStateException) {
+            player.sendMessage("Note: Kill player key was already registered: ${e.message}")
+        }
 
 
         val buttonData = ButtonDataBuilder()
@@ -41,21 +65,22 @@ class Test(
             .width(80)
             .build()
 
-        val testButton = Button(buttonData, Optional.of(CustomAll(Executor.KILL_PLAYER.key, Optional.empty())))
+        // Updated to use killPlayerKey
+        val testButton = Button(buttonData, Optional.of(CustomAll(killPlayerKey, Optional.empty())))
 
 
         val exitButton = Button(exitButtonData)
 
         val booleanInput = NumberRangeInputBuilder()
             .label(Component.literal("Input"))
-            .width(150)
+            .width(150) // Corrected from 'with' to 'width' based on previous refactor
             .rangeInfo(RangeInfo(1.0f,10.0f))
             .labelFormat("")
             .build()
 
         val stringInput = TextInputBuilder()
             .label(Component.literal("Text input"))
-            .width(256)
+            .width(256) // Corrected from 'with' to 'width'
             .initial("")
             .labelVisible(true)
             .maxLength(300)
@@ -80,7 +105,7 @@ class Test(
             .addBody(dialogBody)
             .addBody(itemBody)
             .addBody(dialogBody)
-            //.addInput(booleanInput)
+            //.addInput(booleanInput) // Assuming booleanInput was intentionally commented out
             .addInput(stringInput)
             .build()
 

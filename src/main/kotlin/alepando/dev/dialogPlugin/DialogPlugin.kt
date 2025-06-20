@@ -8,7 +8,7 @@ class DialogPlugin : JavaPlugin() {
 
     override fun onEnable() {
         server.pluginManager.registerEvents(PlayerConnectionStatus(this),this)
-        getCommand("test")!!.setExecutor(TestCommand())
+        getCommand("test")!!.setExecutor(TestCommand(this)) // Pass plugin instance
     }
 
     override fun onDisable() {

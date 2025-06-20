@@ -1,20 +1,24 @@
 package alepando.dev.dialogapi.packets.reader
 
-import alepando.dev.dialogapi.executor.Executor
+import alepando.dev.dialogapi.executor.CustomKeyRegistry // Import new registry
 import net.minecraft.network.protocol.common.ServerboundCustomClickActionPacket
 import org.bukkit.entity.Player
 import org.bukkit.plugin.Plugin
+// Consider adding a logger for warnings: import java.util.logging.Logger
 
 internal object ReaderManager {
+    // Optional: private val logger = Logger.getLogger(ReaderManager::class.java.name)
 
     fun peekInputs(player: Player, packet: ServerboundCustomClickActionPacket) {
-        val key = Executor.from(packet.id) ?: return
-        key.reader.task(player,packet)
+        val binding = CustomKeyRegistry.getBinding(packet.id)
+        binding?.reader?.task(player, packet)
+        // Optional: if (binding == null) { logger.warning("No input reader found for packet ID: ${packet.id}") }
     }
 
     fun peekActions(player: Player, packet: ServerboundCustomClickActionPacket, plugin: Plugin) {
-        val key = Executor.from(packet.id) ?: return
-        key.action.execute(player,plugin)
+        val binding = CustomKeyRegistry.getBinding(packet.id)
+        binding?.action?.execute(player, plugin)
+        // Optional: if (binding == null) { logger.warning("No action found for packet ID: ${packet.id}") }
     }
 
 }
