@@ -21,7 +21,7 @@ repositories {
 dependencies {
     paperweight.paperDevBundle("1.21.6-R0.1-SNAPSHOT")
     compileOnly("io.papermc.paper:paper-api:1.21.6-R0.1-SNAPSHOT")
-    compileOnly(files(rootProject.file("nms/paper-1.21.6.jar")))
+    compileOnly("io.papermc.paper:paper-server:1.21.6-R0.1-SNAPSHOT")
 
     implementation(kotlin("stdlib-jdk8"))
 }
