@@ -2,7 +2,7 @@ package alepando.dev.dialogPlugin.dialog.test
 
 import alepando.dev.dialogapi.body.types.PlainMessageDialogBody
 import alepando.dev.dialogapi.body.types.builders.ItemDialogBodyBuilder
-import alepando.dev.dialogapi.executor.Keys
+import alepando.dev.dialogapi.executor.Executor
 import alepando.dev.dialogapi.factory.button.Button
 import alepando.dev.dialogapi.factory.button.data.ButtonDataBuilder
 import alepando.dev.dialogapi.factory.data.DialogDataBuilder
@@ -41,7 +41,7 @@ class Test(
             .width(80)
             .build()
 
-        val testButton = Button(buttonData, Optional.of(CustomAll(Keys.KILL_PLAYER.key, Optional.empty())))
+        val testButton = Button(buttonData, Optional.of(CustomAll(Executor.KILL_PLAYER.key, Optional.empty())))
 
 
         val exitButton = Button(exitButtonData)

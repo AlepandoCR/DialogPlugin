@@ -8,13 +8,13 @@ import net.minecraft.resources.ResourceLocation
 
 const val namespace = "dialog_plugin"
 
-enum class Keys(val key: ResourceLocation, val action: CustomAction, val reader: InputReader) {
+enum class Executor(val key: ResourceLocation, val action: CustomAction, val reader: InputReader) {
 
     KILL_PLAYER(ResourceLocation.fromNamespaceAndPath(namespace, "kill_player"), KillPlayerAction, PlayerReturnValueReader);
 
     companion object {
         private val byLocation = entries.associateBy { it.key }
 
-        fun from(location: ResourceLocation): Keys? = byLocation[location]
+        fun from(location: ResourceLocation): Executor? = byLocation[location]
     }
 }

@@ -1,6 +1,5 @@
 package alepando.dev.dialogapi.packets.reader
 
-import alepando.dev.dialogapi.executor.Keys
-import alepando.dev.dialogapi.packets.reader.InputReader
+import alepando.dev.dialogapi.executor.Executor
 
-internal data class ListedReader(val reader: InputReader, val resourceKey: Keys)
+internal data class ListedReader(val reader: InputReader, val resourceKey: Executor)
