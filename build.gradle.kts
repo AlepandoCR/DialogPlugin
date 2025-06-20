@@ -33,10 +33,6 @@ tasks {
     shadowJar {
         archiveClassifier.set("")
         mergeServiceFiles()
-
-        exclude("org/bukkit/**")
-        exclude("net/minecraft/**")
-        exclude("com/mojang/**")
     }
 
     build {
