@@ -34,7 +34,7 @@ class ConfirmationDialog(
      *
      * @return The NMS [NMSConfirmationDialog] object.
      */
-    fun toNMS(): NMSConfirmationDialog {
+    override fun toNMS(): NMSConfirmationDialog {
         return NMSConfirmationDialog(data.toNMS(),yesButton,noButton)
     }
 

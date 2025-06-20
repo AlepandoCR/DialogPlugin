@@ -2,6 +2,7 @@ package alepando.dev.dialogapi.factory
 
 import alepando.dev.dialogapi.factory.data.DialogData
 import alepando.dev.dialogapi.util.DynamicListener
+import net.minecraft.server.dialog.Dialog
 import org.bukkit.event.Listener
 import java.util.*
 
@@ -16,7 +17,7 @@ import java.util.*
 abstract class Dialog(
     val data: DialogData,
     private val dynamicListener: Optional<DynamicListener> = Optional.empty()
-) {
+): Wrapper<Dialog> {
     /**
      * Retrieves the Bukkit [Listener] associated with this dialog, if any.
      * This listener might be provided by the [DynamicListener].
@@ -25,7 +26,6 @@ abstract class Dialog(
      *         or if the [DynamicListener] is not present or has no listener.
      */
     fun getBukkitListener(): Listener?{
-        // Check if dynamicListener is present and then if its internal listener is present
         if(dynamicListener.isPresent && dynamicListener.get().isPresent()) {
             return dynamicListener.get().getListener()
         }

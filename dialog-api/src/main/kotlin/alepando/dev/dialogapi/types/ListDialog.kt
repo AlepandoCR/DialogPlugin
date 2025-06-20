@@ -18,7 +18,7 @@ class ListDialog(
     private val exitButton: Optional<Button>,
     private val columns: Int = 2,
     private val buttonWidth: Int = 150
-) : Dialog(data), Wrapper<NMSDialogListDialog> {
+) : Dialog(data){
 
     override fun toNMS(): NMSDialogListDialog {
         return NMSDialogListDialog(

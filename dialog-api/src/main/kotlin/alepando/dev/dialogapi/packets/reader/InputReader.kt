@@ -1,6 +1,6 @@
 package alepando.dev.dialogapi.packets.reader
 
-import alepando.dev.dialogapi.packets.parser.CustomActionPacket
+import alepando.dev.dialogapi.packets.parser.PayloadParser
 import net.minecraft.network.protocol.common.ServerboundCustomClickActionPacket
 import org.bukkit.entity.Player
 
@@ -18,11 +18,9 @@ interface InputReader {
      * This method should contain the logic to handle the data sent by the client.
      *
      * @param player The Bukkit [Player] who interacted with the dialog.
-     * @param packet The [ServerboundCustomClickActionPacket] received from the client.
-     *               This packet contains the ID of the custom action/interaction and the payload.
-     * @param value The value extracted from the packet's payload by [CustomActionPacket.getValue].
+     * @param value The value extracted from the packet's payload by [PayloadParser.getValue].
      *              This is provided as a convenience, but implementations can choose to parse the packet directly.
      *              The type of this value depends on the data sent by the client (e.g., String, Int, Boolean).
      */
-    fun task(player: Player, packet: ServerboundCustomClickActionPacket, value: Any? = CustomActionPacket.getValue(packet))
+    fun task(player: Player, value: Any?)
 }

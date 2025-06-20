@@ -16,7 +16,7 @@ class MultiActionDialog(
     private val exitButton: Optional<Button>,
     private val columns: Int
 
-): Dialog(data), Wrapper<NMSMultiActionDialog> {
+): Dialog(data) {
     override fun toNMS(): NMSMultiActionDialog {
         return NMSMultiActionDialog(data.toNMS(),toNMSButtonList(),toNMSOptionalButton(),columns)
     }

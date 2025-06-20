@@ -11,7 +11,7 @@ typealias NMSNoticeDialog = NoticeDialog
 class NoticeDialog(
     data: DialogData,
     private val button: Button
-) : Dialog(data), Wrapper<NMSNoticeDialog> {
+) : Dialog(data) {
 
     override fun toNMS(): NMSNoticeDialog {
         return NMSNoticeDialog(

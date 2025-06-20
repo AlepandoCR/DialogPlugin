@@ -18,10 +18,9 @@ object PlayerReturnValueReader: InputReader {
      * representation of the extracted value.
      *
      * @param player The Bukkit [Player] who interacted with the dialog.
-     * @param packet The [ServerboundCustomClickActionPacket] from the client.
      * @param value The value extracted from the packet's payload.
      */
-    override fun task(player: Player, packet: ServerboundCustomClickActionPacket, value: Any?) {
+    override fun task(player: Player, value: Any?) {
         player.sendMessage("In: $value")
     }
 }

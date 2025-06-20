@@ -15,7 +15,7 @@ class LinksDialog(
     private val exitButton: Optional<Button>,
     private val columns: Int = 2,
     private val buttonWidth: Int = 150
-) : Dialog(data), Wrapper<NMSServerLinksDialog> {
+) : Dialog(data) {
 
     override fun toNMS(): NMSServerLinksDialog {
         return NMSServerLinksDialog(

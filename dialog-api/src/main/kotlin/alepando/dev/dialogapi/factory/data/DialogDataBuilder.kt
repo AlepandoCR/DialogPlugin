@@ -2,7 +2,8 @@ package alepando.dev.dialogapi.factory.data
 
 import alepando.dev.dialogapi.body.DialogBody
 import alepando.dev.dialogapi.factory.input.Input
-import net.minecraft.network.chat.Component
+import alepando.dev.dialogapi.util.ComponentTranslator
+import net.kyori.adventure.text.Component
 import net.minecraft.server.dialog.DialogAction
 import java.util.*
 
@@ -11,8 +12,8 @@ import java.util.*
  * Provides methods to set various properties of a dialog.
  */
 class DialogDataBuilder {
-    private var title: Component = Component.literal("Title")
-    private var externalTitle: Optional<Component> = Optional.empty()
+    private var title: Component = Component.text("N/D")
+    private var externalTitle: Component = Component.empty()
     private var canCloseWithEscape: Boolean = true
     private var pause: Boolean = false
     private var afterAction: DialogAction = DialogAction.CLOSE
@@ -35,8 +36,8 @@ class DialogDataBuilder {
      * @param externalTitle The [Component] to be used as the external title. Can be null for no external title.
      * @return This [DialogDataBuilder] instance for chaining.
      */
-    fun externalTitle(externalTitle: Component?): DialogDataBuilder {
-        this.externalTitle = Optional.ofNullable(externalTitle)
+    fun externalTitle(externalTitle: Component): DialogDataBuilder {
+        this.externalTitle = externalTitle
         return this
     }
 
@@ -118,8 +119,8 @@ class DialogDataBuilder {
      */
     fun build(): DialogData {
         return DialogData(
-            title,
-            externalTitle,
+            ComponentTranslator.toNMS(title),
+            Optional.of(ComponentTranslator.toNMS(externalTitle)),
             canCloseWithEscape,
             pause,
             afterAction,

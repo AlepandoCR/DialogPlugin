@@ -5,12 +5,12 @@ import org.bukkit.command.Command
 import org.bukkit.command.CommandExecutor
 import org.bukkit.command.CommandSender
 import org.bukkit.entity.Player
-import alepando.dev.dialogPlugin.DialogPlugin // Added import
+import alepando.dev.dialogPlugin.DialogPlugin
 
-class TestCommand(private val plugin: DialogPlugin) : CommandExecutor { // Added constructor
+class TestCommand(private val plugin: DialogPlugin) : CommandExecutor {
     override fun onCommand(sender: CommandSender, command: Command, label: String, args: Array<out String>): Boolean {
         if(sender is Player) {
-            Test(sender, plugin).testDialog() // Pass plugin instance
+            Test(sender, plugin).testDialog()
             return true
         }
 
