@@ -18,6 +18,7 @@ import alepando.dev.dialogapi.factory.input.types.builders.TextInputBuilder
 import alepando.dev.dialogapi.packets.reader.types.PlayerReturnValueReader
 import alepando.dev.dialogapi.types.builders.MultiActionDialogBuilder
 import net.kyori.adventure.text.Component
+import net.minecraft.network.chat.ClickEvent.Custom
 import org.bukkit.Material
 import org.bukkit.entity.Player
 import org.bukkit.inventory.ItemStack
@@ -30,11 +31,9 @@ class Test(
 
     fun testDialog(){
 
-        val killPlayerNamespace = "dialog_plugin_test"
-        val killPlayerPath = "kill_player_test"
+        val killPlayerNamespace = "dialog"
+        val killPlayerPath = "damage_player"
         val killPlayerKey = ResourceLocation(killPlayerNamespace, killPlayerPath)
-
-        // Register the api's test KillPlayerAction
         try {
             CustomKeyRegistry.register(
                 killPlayerKey,
@@ -56,7 +55,9 @@ class Test(
             .width(80)
             .build()
 
-        val testButton = Button(buttonData, Optional.of(Action(killPlayerKey)))
+        val action = Action(killPlayerKey)
+
+        val testButton = Button(buttonData, Optional.of(action))
 
         val exitButton = Button(exitButtonData)
 

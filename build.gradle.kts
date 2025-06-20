@@ -31,6 +31,7 @@ kotlin {
 
 tasks {
     shadowJar {
+        mustRunAfter(":dialog-api:shadowJar")
         archiveClassifier.set("")
         mergeServiceFiles()
     }

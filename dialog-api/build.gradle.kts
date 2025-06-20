@@ -1,9 +1,8 @@
 plugins {
     kotlin("jvm") version "2.1.21"
     `java-library`
-    id("xyz.jpenilla.run-paper") version "2.3.1"
+    id("com.github.johnrengelman.shadow") version "8.1.1"
     id("io.papermc.paperweight.userdev") version "2.0.0-beta.17"
-    id("com.github.johnrengelman.shadow") version "8.1.1"  // Añadí shadow plugin
 }
 
 group = "alepando.dev"
@@ -20,9 +19,6 @@ repositories {
 
 dependencies {
     paperweight.paperDevBundle("1.21.6-R0.1-SNAPSHOT")
-    compileOnly("io.papermc.paper:paper-api:1.21.6-R0.1-SNAPSHOT")
-    compileOnly("io.papermc.paper:paper-server:1.21.6-R0.1-SNAPSHOT")
-
     implementation(kotlin("stdlib-jdk8"))
 }
 
