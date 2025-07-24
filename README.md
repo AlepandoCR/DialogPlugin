@@ -1,3 +1,6 @@
+
+# Outdated, try DialogAPI
+
 #  DialogPlugin – Custom Dialog Wrapper (Minecraft 1.21+)
 
 **DialogPlugin** is a developer-focused plugin for easily testing and extending Minecraft's new native dialogs via the `ServerboundCustomClickActionPacket`.  
