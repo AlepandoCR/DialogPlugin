@@ -1,5 +1,6 @@
 
-# Outdated, try DialogAPI
+# Outdated, try [DialogApi](https://github.com/AlepandoCR/DialogAPI)
+
 
 #  DialogPlugin – Custom Dialog Wrapper (Minecraft 1.21+)
 
